@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %} 
+    {{super()}} ver ingrediente selecionada
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form id="ingredient_update_form" class="form form-horizontal" method="POST" role="form" action="/ingredients/update/{{title}}" enctype="multipart/form-data" >
+            <fieldset id="fieldsetmyFormControl" disabled>
+                <legend>{{title}}</legend>
+                <div class="form-group">
+                    <label for="inputTitle" class="col-sm-3 control-label">Nombre del ingrediente</label>
+                    <div class="col-sm-9">
+                        <input id="title" name="title" type="text" class="form-control"  placeholder="Nombre del ingrediente" {% if form %} value="{{title}}" {% endif %} disabled required>
+                    </div>
+                </div>
+                <hr>
+                <!-- **********************************************************-->
+                <div class="form-group">
+                    <label for="inputPrice" class="col-sm-3 control-label">Precio</label>
+                    <div class="col-sm-4">
+                        <input id="price" name="price" type="number" class="form-control"  placeholder="Precio del ingrediente" step="0.01" min="0" {% if form %} value="{{form.get('price')}}" {% endif %} required>
+                    </div>
+                    <div class="col-sm-5"></div>
+                </div>
+                <div class="form-group">
+                    <label for="inputQuantity" class="col-sm-3 control-label">Cantidad</label>
+                    <div class="col-sm-4">
+                        <input id="quantity" name="quantity" type="number" class="form-control"  placeholder="Cantidad de la presentacion" step="0.01" min="0" {% if form %} value="{{form.get('quantity')}}" {% endif %} required>
+                    </div>
+                    <div class="col-sm-5"></div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUnit" class="col-sm-3 control-label">Unidad</label>
+                    <div class="col-sm-4">
+                        <input id="unit" name="unit" type="text" class="form-control" placeholder="Unidad de la presentacion (gr,ml)" {% if form %} value="{{form.get('unit')}}" {% endif %} required>
+                    </div>
+                    <div class="col-sm-5"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="glutenFree">Gluten Free</label>
+                    <div class="col-sm-4">
+                        <input id="glutenFree" name='is_gluten_free'  type="checkbox" {% if form %} {% if form.get('is_gluten_free') %} checked="checked" {% endif %} {% endif %}> 
+                    </div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <hr>
+                
+                <br><br>
+
+                <div id="buttons_box" class="text-right" hidden>
+                    <button type="submit" id="go_back_btn"  name='go_back_btn' class="btn btn-info" >Atras</button>
+                    <button type="submit" id="submit_btn"  class="btn btn-success" >Guardar</button>
+                </div>
+            </fieldset>    
+        </form>
+
+        
+        <div class="text-left" id="go_edit" >
+            <button type="button" class="btn btn-success" onclick="make_editable()" >Editar</button>
+        </div>
+    </div>
+    
+    <script type='text/javascript'>
+        
+        function make_editable() {
+            //console.log("hacer editable esta receta")
+            let submit = document.getElementById('buttons_box')
+            submit.hidden   = !submit.hidden
+
+            let fieldsetmy  = document.getElementById('fieldsetmyFormControl')
+            fieldsetmy.disabled = !fieldsetmy.disabled
+
+            let goEdit = document.getElementById('go_edit')
+            goEdit.hidden   = !goEdit.hidden
+        }
+    </script>
+
+{% endblock %}
+
+
+
+

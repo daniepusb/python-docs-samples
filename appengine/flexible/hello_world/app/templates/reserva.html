@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex"/>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-57x57.png?alt=media&token=bff22ec3-fa69-4eaf-be69-7de4ce9a62e9">
+    <link rel="apple-touch-icon" sizes="60x60" href="/https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-60x60.png?alt=media&token=6cdf8944-84f3-4a8e-9b98-ae20079edef0">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-72x72.png?alt=media&token=b6f05497-e520-4d0c-b626-e2cd3a1d622e">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-76x76.png?alt=media&token=2d9561f2-5d63-4775-9bf8-837c07e057d3">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-114x114.png?alt=media&token=3eda6eb1-1a05-4f6b-827a-b75aa7612d8c">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-120x120.png?alt=media&token=6b41a72f-909f-4b02-93c3-b9100a9018dc">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-144x144.png?alt=media&token=005d2562-d63a-4e5c-b3ff-648ec0bed68e">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-152x152.png?alt=media&token=f7ec9868-a9e8-4e81-aebf-17095b846ff2">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-180x180.png?alt=media&token=e283ff30-0870-4447-b2dd-aaaf66cecf02">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fandroid-icon-192x192.png?alt=media&token=c77e975b-07fb-4820-b749-a5895f10b3b1">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Ffavicon-32x32.png?alt=media&token=92550e42-d5e5-4750-b96e-c69b685aee34">
+    <link rel="icon" type="image/png" sizes="96x96" href="/https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Ffavicon-96x96.png?alt=media&token=310c2d25-1a4d-42ed-8118-cf16ebe6fa39">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Ffavicon-16x16.png?alt=media&token=009651c2-8953-4bec-aee5-59600d827ccf">
+    <link rel="manifest" href="{{ url_for('static', filename='assets/favicon/manifest.json')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fms-icon-144x144.png?alt=media&token=7719233f-ad4b-4f41-8a89-166bf9144ec8">
+    <meta name="theme-color" content="#1A1A1A">
+    <!-- Favicon -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/booking.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/googleMap.css')}}">
+    <title> Reservación de tu servicio </title>
+</head>
+<body>
+    <header>
+        <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Fimg%2Fservicioskuo__white.png?alt=media&token=9672a85c-9a65-4e03-8b9b-02f3d5101dcc" alt="Servicios Kuo">
+    </header>
+    <div class="bar">
+        <div class="bar__progress"> </div>
+    </div>
+    <main class="booking">
+        <h1> ¿Dónde y cuándo quieres tu masaje? </h1>
+        <form method="POST" role="form" action="/reserva">
+            <ul>
+                <input type="text" class="inputs datepicker" name="date" placeholder="Selecciona la fecha 🗓️" required>
+            </ul>
+            <ul>
+                <input type="text" class="inputs timepicker" name="hour" placeholder="Selecciona la hora 🕛" required>
+            </ul>
+            <ul>
+                <input id="user__address" type="text" class="inputs" name="address" placeholder="Ingresa tu ubicación 🏠" required="">
+            </ul>
+            <div>
+                <h2> Personaliza tu masaje relajante </h2>
+                <ul class="bookingExtra__duration">
+                    <h3> Duración: </h3>
+                    <label>
+                        <input  value="price_1IgF7eHn1TLFiHT2vaFEIdXt" name="group1" type="radio" checked />
+                        <span>30 minutos</span>
+                    </label>
+                    <label>
+                        <input value="price_1IgF7eHn1TLFiHT2NZ8EbQUN" name="group1" type="radio" />
+                        <span> 60 minutos </span>
+                    </label>
+                    <label>
+                        <input value="price_1IgF7eHn1TLFiHT2RvmNRb7p" name="group1" type="radio" />
+                        <span> 90 minutos </span>
+                    </label>
+                </ul>
+                <ul class="bookingExtra__people">
+                    <h3> Elige para cuántas personas: </h3>
+                    <label>
+                        <input id="onePerson" name="group2" type="radio" checked />
+                        <span> 1 persona </span>
+                    </label>
+                    <label>
+                        <input id="twoPeople" name="group2" type="radio" />
+                        <span> 2 personas </span>
+                    </label>
+                    <label>
+                        <input id="threePeople" name="group2" type="radio" />
+                        <span> 3 personas </span>
+                    </label>
+                    <label>
+                        <input id="fourPeople" name="group2" type="radio" />
+                        <span> 4 personas </span>
+                    </label>
+                </ul>
+            </div>
+            <div class="bookingContainer">
+                <div class="bookingContainer__price">
+                    <p> Total: </p> <p id="price"> $500 MXN </p>
+                </div>
+                <button type="submit" class="bookingContainer__button">
+                    <h2>Confirmar</h2>
+                    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/booking.css')}}">
+                    <img src="{{ url_for('static', filename='assets/icons/arrow.png')}}" alt="Icono de continuar">
+                </button>
+            </div>
+        </form>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/datePicker.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/timepicker.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/googleMapsPlaces.js')}}"></script>
+
+    <!-- Start Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGzDOdZnfdPkZoz8dSEWuyhZ5MRcGuTEs&callback=initMap&libraries=places&v=weekly"async ></script>
+    <!-- End Google Maps -->
+    <!-- Start Modal Materialize -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems       = document.querySelectorAll('.modal');
+            var instances   = M.Modal.init(elems);
+        });
+    </script>
+    <!-- End Modal Materialize -->
+    <script>
+
+        const Time30 = '#price_1IgF7eHn1TLFiHT2vaFEIdXt';
+        const Time60 = '#price_1IgF7eHn1TLFiHT2NZ8EbQUN';
+        const Time90 = '#price_1IgF7eHn1TLFiHT2RvmNRb7p';
+        const onePerson = '#onePerson';
+        const twoPeople = '#twoPeople';
+        const threePeople = '#threePeople';
+        var price = 500;
+
+
+        $(document).ready(function time() {
+
+            $(Time30).click(function() {
+                var price = 500;
+                $('#price').text('$' + price + ' MXN');
+            });
+            $(Time60).click(function() {
+                price = 750;
+                $('#price').text('$' + price + ' MXN');
+            });
+            $(Time90).click(function() {
+                price = 1300;
+                $('#price').text('$' + price + ' MXN');
+            });
+            
+        });
+
+        $(document).ready(function people() {
+            $(twoPeople).click(function() {
+                price = price*2;
+                $('#price').text('$' + price + ' MXN');
+            });
+            $(threePeople).click(function() {
+                price = price*3;
+                $('#price').text('$' + price + ' MXN');
+            });
+            $(fourPeople).click(function() {
+                price = price*4;
+                $('#price').text('$' + price + ' MXN');
+            });
+
+        });
+        
+
+
+
+        /* let time30 = document.querySelector('price_1IgF7eHn1TLFiHT2vaFEIdXt');
+        let time60 = document.querySelector('price_1IgF7eHn1TLFiHT2NZ8EbQUN');
+        let time90 = document.querySelector('price_1IgF7eHn1TLFiHT2RvmNRb7p');
+        let price = document.querySelector('price');
+
+        let group1 = document.querySelector('group1')
+
+        group1.addEventListener('change', viewPrice);
+
+        function viewPrice( ) {
+            let election = group1.value; 
+
+            if (election === time30) {
+                price.textContent = '$500 MXN'
+            } else if (election === time60) {
+                price.textContent = '$750 MXN'
+            } else if (election === time90) {
+                price.textContent = '$1300 MXN'
+            } else {
+                price.textContent = '';
+            }
+        } */
+        
+    </script>
+</body>
+</html>

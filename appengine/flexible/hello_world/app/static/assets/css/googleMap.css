@@ -1,0 +1,15 @@
+#map {
+    height: 100%;
+    width: 100%;
+}
+#googleMap__modal {
+    margin: 0 auto;
+    width: 90% !important ;
+    height: 100% !important ;
+}
+.modal-header a {
+    background-color: #39B387;
+    color: white;
+    width: 100%;
+    text-align: right;
+}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %} 
+    {{super()}} {{cil}}
+{% endblock %}
+
+{% block navbar %}
+    {{super()}}
+{% endblock %}
+
+{% block content %}
+    {{super()}}
+   
+    <div class="container">
+        {% if recipes %}
+            <h1>Listar recetas</h1>
+            <ul class="list-group">
+                {% for r in recipes %}
+                    {{ macros.render_recipes(r) }}                
+                {% endfor %}
+            </ul>
+        {% else %}
+        <h1>No hay recetas para mostrar</h1>
+        {% endif %}
+    </div>
+
+{% endblock %}

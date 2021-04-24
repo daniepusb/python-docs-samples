@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {{super() }} 
+    <style>
+        form {
+            margin: 50px 10vw;
+        }
+
+        h2 {
+            margin: 50px 0 20px;
+        }
+
+        li {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        button {
+            border: 0;
+            outline: none;
+        }
+
+        input {
+            background-color: #262626;
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            padding: 0 20px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+{% endblock %}
+{% block title %}
+    {{ super() }} 404
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="main__image"> </div>
+        <div class="main__text">
+            <h1> Pronto podrás reservar servicios. </h1>
+            <p> Por ahora solo hemos hecho pruebas piloto en tu localidad. </p>
+        </div>
+    </main>
+    <h2> Ingresa tu correo para avisarte y recibir descuentos exclusivos </h2>
+    <form action="./form.php" method="POST">
+        <li>
+            <input type="text" name="name" id="name" placeholder="Nombre">
+        </li>
+        <li> 
+            <input type="text" name="mail" id="mail" placeholder="Correo electrónico">
+        </li>
+        <li>
+            <button class="button__fullWidth" type="submit"> Enviar </button>
+        </li>
+    </form>
+    <div class="division"> </div>
+    <footer class="footer">
+        <div class="footer__logo">
+            <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Fimg%2Fservicioskuo__white.png?alt=media&token=9672a85c-9a65-4e03-8b9b-02f3d5101dcc" alt="Logo de Kuo">
+            <h2> En las personas confíamos </h2>
+        </div>
+        <div class="footer__links">
+            <h3> Enlaces </h3>
+            <div class="footer__links--items">
+                <a href="./kuoPartner.html" target="_blank"> Postúlate para ser KuoPartner </a>
+                <a href="#"> Reserva un masaje relajante </a>
+                <a href="./seleccion.html" target="_blank"> Conoce nuestro proceso de selección </a>
+            </div>
+        </div>
+        <div class="footer__contact">
+            <h3> Contacto </h3>
+            <div class="footer__contact--items">
+                <a href="#"> <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Femail.png?alt=media&token=344e93af-4dc7-467a-87fa-0139f94d963f" alt="Correo electrónico de Kuo"> </a>
+                <a href="#"> <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fwhatsapp__white.png?alt=media&token=f6062f65-9320-475a-88ca-300f44c448b7" alt="WhatsApp de Kuo"> </a>
+            </div>
+        </div>
+        <div class="footer__social">
+            <h3> Redes sociales </h3>
+            <div class="footer__social--items">
+                <a target="_blank" href="https://www.facebook.com/Kuo-104543465093015" rel="external nofollow"> <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Ffacebook.png?alt=media&token=3b49561b-5b67-471a-acfd-61d971b3baed" alt="Facebook de Kuo">  </a>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

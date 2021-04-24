@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-57x57.png?alt=media&token=bff22ec3-fa69-4eaf-be69-7de4ce9a62e9">
+    <link rel="apple-touch-icon" sizes="60x60" href="/https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-60x60.png?alt=media&token=6cdf8944-84f3-4a8e-9b98-ae20079edef0">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-72x72.png?alt=media&token=b6f05497-e520-4d0c-b626-e2cd3a1d622e">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-76x76.png?alt=media&token=2d9561f2-5d63-4775-9bf8-837c07e057d3">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-114x114.png?alt=media&token=3eda6eb1-1a05-4f6b-827a-b75aa7612d8c">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-120x120.png?alt=media&token=6b41a72f-909f-4b02-93c3-b9100a9018dc">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-144x144.png?alt=media&token=005d2562-d63a-4e5c-b3ff-648ec0bed68e">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-152x152.png?alt=media&token=f7ec9868-a9e8-4e81-aebf-17095b846ff2">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fapple-icon-180x180.png?alt=media&token=e283ff30-0870-4447-b2dd-aaaf66cecf02">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fandroid-icon-192x192.png?alt=media&token=c77e975b-07fb-4820-b749-a5895f10b3b1">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Ffavicon-32x32.png?alt=media&token=92550e42-d5e5-4750-b96e-c69b685aee34">
+    <link rel="icon" type="image/png" sizes="96x96" href="/https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Ffavicon-96x96.png?alt=media&token=310c2d25-1a4d-42ed-8118-cf16ebe6fa39">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Ffavicon-16x16.png?alt=media&token=009651c2-8953-4bec-aee5-59600d827ccf">
+    <link rel="manifest" href="{{ url_for('static', filename='assets/favicon/manifest.json')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ffavicon%2Fms-icon-144x144.png?alt=media&token=7719233f-ad4b-4f41-8a89-166bf9144ec8">
+    <meta name="theme-color" content="#1A1A1A">
+    <!-- Favicon -->
+    <link rel="stylesheet" href="../css/number.css">
+    <title> Ingresa tu número celular </title>
+</head>
+<body>
+    <header>
+        <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Fimg%2Fservicioskuo.png?alt=media&token=ac44d3ae-70e7-4140-bd50-756ec386d86e" alt="Servicios Kuo">
+    </header>
+    <div class="bar">
+        <div class="bar__progress"> </div>
+    </div>
+    <main class="booking">
+        <h1> Por favor ingresa tu número celular </h1>
+        <p> Nos permite mantener contacto contigo y lograr que tu servicio se realice satisfactoriamente. </p>
+        <form action="">
+            <ul>
+                <input type="tel" class="inputs" placeholder="Número de celular 📱" required>
+            </ul>
+            <a class="booking__button" href="pago.html">
+                Agregar e ir a pagar servicio
+                <img src="../assets/icons/arrow.png" alt="Icono de continuar">
+            </a>
+        </form>
+    </main>
+    <script src="../script/bookingProcess.js"></script>
+    <script src="../script/datePicker.js"></script>
+    <script src="../script/timePicker.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main>
+        <div class="main__image"> </div>
+        <div class="main__text">
+            <h1> Disfruta de tus servicios favoritos en tu hogar </h1>
+            <h3> Ahorra y dedica tiempo a lo más importante </h3>
+        </div>
+        <a class="button__fullWidth" href="#services"> Agendar un servicio </a>
+    </main>
+    <section class="how">
+        <h1> ¿Cómo funciona? </h1>
+        <div class="how__scroll">
+        <div class="how__container">
+            <div class="how__container--item">
+                <p class="how__container--item__step"> 1 </p>
+                <p> Agenda tu servicio en la plataforma </p>
+            </div>
+            <div class="how__container--item">
+                <p class="how__container--item__step"> 2 </p>
+                <p> Recibe información de la KuoPartner </p>
+            </div>
+            <div class="how__container--item">
+                <p class="how__container--item__step"> 3 </p>
+                <p> ¡Disfruta de tu servicio! </p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="benefits">
+        <h1> Descubre los beneficios de reservar tus servicios a domicilio </h1>
+        <div class="benefits__scroll">
+        <div class="benefits__cardsContainer">
+            <div class="benefits__cardsContainer--item" id="benefits__cardsContainer--item1">
+                <p> Tienes el poder de elegir fecha y hora </p>
+            </div>
+            <div class="benefits__cardsContainer--item" id="benefits__cardsContainer--item2">
+                <p> Olvida tener que esperar a ser atendida(o) </p>
+            </div>
+            <div class="benefits__cardsContainer--item" id="benefits__cardsContainer--item3">
+                <p> No tienes que perder tiempo transportándote </p>
+            </div>
+            <div class="benefits__cardsContainer--item" id="benefits__cardsContainer--item4">
+                <p> Ahorra tiempo y dedícalo a otras actividades </p>
+            </div>
+        </div>
+        </div>
+        <a class="button__fullWidth" href="#services"> Agendar un servicio </a>
+    </section>
+    <section class="what">
+        <div class="what__cardContainer">
+            <div class="what__cardContainer--item">
+                <img id="special__icon" src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fshield.png?alt=media&token=6c316dd3-28e1-4493-bd2a-0cfb60c3e2a8" alt="Seguridad en el servicio a domicilio">
+                <h3> Seguridad </h3>
+                <p> Monitoreamos el servicio en tiempo real y nuestro equipo de soporte está listo para atenderte. </p>
+            </div>
+            <div class="what__cardContainer--item">
+                <img id="special__icon"  src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fwhatsapp.png?alt=media&token=ebe047d0-d8c3-433f-a647-59d7b7de7248" alt="Atención por WhatsApp">
+                <h3> Atención directa </h3>
+                <p> Habla con nosotros vía WhatsApp. Sin robots, habla con personales reales. </p>
+            </div>
+            <div class="what__cardContainer--item">
+                <img id="special__icon"  src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fverified-user.png?alt=media&token=9e393447-b279-4ec1-a3c9-e7e6284bc2c4" alt="KuoPartners capacitados">
+                <h3> KuoPartners </h3>
+                <p> Nuestras servidoras pasan por un estricto proceso de selección para integrarse a nuestra plataforma. </p>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <h1> Conoce la experiencia de nuestros usuarios </h1>
+        <div class="testimonials__scroll">
+            <div class="testimonials__container">
+                <div class="testimonials__container--item">
+                    <img class="testimonials__container--item--iconQuote" src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fquote.png?alt=media&token=97441cea-4c9a-4177-b5dd-05b32b7ac56d" alt="Icono de testimonios">
+                    <div class="testimonials__container--item--calification">
+                        <img class="testimonials__container--item--calification--stars" src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2FwhiteStars.png?alt=media&token=5046b6cf-bd34-49a1-b06c-96e5fdba81a8" alt="Calificación de 5 estrellas">
+                        <p> "Estoy encantada, la chica fue sumamente puntual y amable." </p>
+                    </div>
+                    <div class="testimonials__container--item--person">
+                        <img src="{{ url_for('static', filename='assets/img/user1.png')}}" alt="">
+                        
+                        <h3> Yaneli Luna </h3>
+                    </div>
+                </div>
+                <div class="testimonials__container--item">
+                    <img class="testimonials__container--item--iconQuote" src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fquote.png?alt=media&token=97441cea-4c9a-4177-b5dd-05b32b7ac56d" alt="Icono de testimonios">
+                    <div class="testimonials__container--item--calification">
+                        <img class="testimonials__container--item--calification--stars" src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2FwhiteStars.png?alt=media&token=5046b6cf-bd34-49a1-b06c-96e5fdba81a8" alt="Calificación de 5 estrellas">
+                        <p> "Recomiendo el masaje relajante, me ayudó a sacar ese estrés que se va acumulando." </p>
+                    </div>
+                    <div class="testimonials__container--item--person">
+                        <img src="{{ url_for('static', filename='assets/img/user2.png')}}" alt="">
+                        
+                        <h3> Rodrigo Juárez </h3>
+                    </div>
+                </div>
+                <div class="testimonials__container--item">
+                    <img class="testimonials__container--item--iconQuote" src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fquote.png?alt=media&token=97441cea-4c9a-4177-b5dd-05b32b7ac56d" alt="Icono de testimonios">
+                    <div class="testimonials__container--item--calification">
+                        <img class="testimonials__container--item--calification--stars" src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2FwhiteStars.png?alt=media&token=5046b6cf-bd34-49a1-b06c-96e5fdba81a8" alt="Calificación de 5 estrellas">
+                        <p> "Tenía duda de la seguridad pero todo salió perfecto y siempre atentos a mis dudas, gracias!." </p>
+                    </div>
+                    <div class="testimonials__container--item--person">
+                        <img src="{{ url_for('static', filename='assets/img/user3.png')}}" alt="">
+                        <h3> Aketzali Carbajal </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h1> Descubre nuestros servicios </h1>
+        <div class="services__scroll">
+            <div class="services__container">
+                <div class="services__container--item" id="services__container--item1">
+                    <h2> Masaje relajante </h2>
+                    <p> $360 MXN - 30 min </p>
+                    <a class="button" href="{{ url_for('masajes') }}"> información </a>
+                </div>
+                <div class="services__container--item" id="services__container--item2">
+                    <h2> Manicure y esmalte </h2>
+                    <h2> Muy pronto... </h2>
+                </div>
+                <div class="services__container--item" id="services__container--item3">
+                    <h2> Consulta médica </h2>
+                    <h2> Muy pronto... </h2>
+                </div>
+                <div class="services__container--item" id="services__container--item4">
+                    <h2> Atención psicológica </h2>
+                    <h2> Muy pronto... </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="division"> </div>
+    <footer class="footer">
+        <div class="footer__logo">
+            <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Fimg%2Fservicioskuo__white.png?alt=media&token=9672a85c-9a65-4e03-8b9b-02f3d5101dcc" alt="Logo de Kuo">
+            <h2> En las personas confíamos </h2>
+        </div>
+        <div class="footer__links">
+            <h3> Enlaces </h3>
+            <div class="footer__links--items">
+                <a href="{{ url_for('kuoPartner') }}" target="_blank"> Postúlate para ser KuoPartner </a>
+                <a href="{{ url_for('masajes') }}"> Reserva un masaje relajante </a>
+                <a href="{{ url_for('seleccion') }}" target="_blank"> Conoce nuestro proceso de selección </a>
+            </div>
+        </div>
+        <div class="footer__contact">
+            <h3> Contacto </h3>
+            <div class="footer__contact--items">
+                <a href="#"> <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Femail.png?alt=media&token=344e93af-4dc7-467a-87fa-0139f94d963f" alt="Correo electrónico de Kuo"> </a>
+                <a href="#"> <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Fwhatsapp__white.png?alt=media&token=f6062f65-9320-475a-88ca-300f44c448b7" alt="WhatsApp de Kuo"> </a>
+            </div>
+        </div>
+        <div class="footer__social">
+            <h3> Redes sociales </h3>
+            <div class="footer__social--items">
+            <a target="_blank" href="https://www.facebook.com/Kuo-104543465093015" rel="external nofollow"> <img src="https://firebasestorage.googleapis.com/v0/b/kuo-services.appspot.com/o/assets%2Ficons%2Ffacebook.png?alt=media&token=3b49561b-5b67-471a-acfd-61d971b3baed" alt="Facebook de Kuo">  </a>
+            </div>
+        </div>
+    </footer>
+    
+{% endblock %}
+</body>
+</html>

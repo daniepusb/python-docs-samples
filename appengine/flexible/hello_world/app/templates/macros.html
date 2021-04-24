@@ -1,0 +1,163 @@
+{% macro render_todo(todo) %}
+    <li>{{ todo.id }}</li>
+{% endmacro %}
+
+{% macro render_dropdown(r) %}
+    <option>{{r}}</option>
+{% endmacro %}
+
+{% macro render_dropdown_products(r) %}
+    {% for i in r %}  
+        <option value="{{i.id}}" aria-name="{{i.get('name')}}" aria-price="{{i.get('price')}}">{{i.get('name')}}</option>
+    {% endfor  %}
+{% endmacro %}
+
+{% macro render_dropdown_paymentsMethods(r) %}
+    {% for i in r %}  
+        <option value="{{i}}" label="{{i}}">{{i}}</option>
+    {% endfor  %}
+{% endmacro %}
+
+{% macro render_recipes(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="{{ url_for('recipes.select', recipe=r.id) }}" >
+                    <img src="{{ r.get('imageURL') }}" alt="{{ r.id }}" style="width:20px;height:20px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle">
+                    <a href="{{ url_for('recipes.select', recipe=r.id) }}">{{ r.id }}</a>
+                    <span>{% if r.get('product') %} (Producto Terminado) {% endif %}</span>
+                </h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}  
+    
+{% macro render_users(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="{{ url_for('profile.profile') }}" >
+                    <img src="{{ url_for('static', filename='assets/img/platzi.png') }}" alt="{{ r }}" style="width:20px;height:20px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle">
+                    <a href="{{ url_for('profile.select', userid=r ) }}">{{ r }}</a>
+                </h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}              
+
+{% macro render_orders(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="{{ url_for('orders.select', orderID=r.id) }}" >
+                    <img src="{{ url_for('static', filename='assets/img/platzi.png') }}" alt="{{ r.id }}" style="width:20px;height:20px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle"><a href="{{ url_for('orders.select', orderID=r.id) }}">{{ r.get('store') }} >> {{ r.get('deliveryDate') }}</a></h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+
+{% macro render_stores(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="{{ url_for('stores.select', storeID=r.get('name')) }}" >
+                    <img src="{{ url_for('static', filename='assets/img/platzi.png') }}" alt="{{ r.get('name') }}" style="width:20px;height:20px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle"><a href="{{ url_for('stores.select', storeID=r.id) }}">{{ r.get('name')}}</a></h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+{% macro render_vendors(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="{{ url_for('vendors.select', vendorID=r.id) }}" >
+                    <img src="{{ url_for('static', filename='assets/img/platzi.png') }}" alt="{{ r.get('name') }}" style="width:20px;height:20px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle"><a href="{{ url_for('vendors.select', vendorID=r.id) }}">{{ r.get('name')}}</a></h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+{% macro render_products(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <img src="{{ url_for('static', filename='assets/img/platzi.png') }}" alt="{{ r.id }}" style="width:20px;height:20px;">
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle"><a >{{ r.id }}</a></h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+
+{% macro render_ingredients(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="{{ url_for('ingredients.select', ingredient=r.id) }}" >
+                    <img src="{{ url_for('static', filename='assets/img/platzi.png') }}" alt="{{ r.id }}" style="width:20px;height:20px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle"><a href="{{ url_for('ingredients.select', ingredient=r.id) }}">{{ r.id }}</a></h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+{% macro render_products(r) %}
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="{{ url_for('products.select', product=r.id) }}" >
+                    <img src="{{ url_for('static', filename='assets/img/platzi.png') }}" alt="{{ r.id }}" style="width:20px;height:20px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-middle"><a href="{{ url_for('products.select', product=r.id) }}">{{ r.get('name') }}</a></h4>
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+
+{% macro render_ingredient_properties(r) %}
+    <li>{{ r }}</li>
+{% endmacro %}
+
+{% macro render_recipe_content(k,v) %}
+    <li><b>{{ k }} :</b> {{v}}</li> 
+{% endmacro %}
+
+{% macro render_dropdown_ingredients_selected(r,opt=False) %}
+    {% if r.id == opt %}
+        <option selected aria-selected="true">{{r.id}}</option>
+    {% else %}
+        <option>{{r.id}}</option>
+    {% endif %}
+{% endmacro %}
+
+{% macro render_dropdown_unit_selected(r,opt=False) %}
+    {% if r.id == opt %}
+        <option selected aria-selected="true">{{r.id}}</option>
+    {% else %}
+        <option>{{r.id}}</option>
+    {% endif %}
+{% endmacro %}

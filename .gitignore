@@ -29,3 +29,10 @@ credentials.dat
 env/
 .idea
 .env*
+# customize
+.fenv
+initscript.sh 
+credentials.json
+ConfigFirebase.js
+robots.txt
+tests
