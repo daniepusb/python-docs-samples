@@ -32,9 +32,6 @@ app = create_app()
 
 stripe.api_key = "sk_test_51IcKJFHn1TLFiHT2Z1W5PRfz8PxzdDigtAqyFaY2zcbmUB1RQ1z4M0c1dzwvWwFIskNQBboBfU5QbkLA0qYPlC6Q00xmL9uwpJ"
 
-app = Flask(__name__)
-
-
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request.')
